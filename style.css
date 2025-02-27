@@ -1,0 +1,341 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+div{
+  display: block;
+}
+#rss > div{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 20px;
+  right: 0;
+}
+article{
+  font-family: "Inria Sans";
+  font-size: 1.1rem;
+  min-height: 100%;
+  padding: 0px 40px 20px;
+  color: rgb(255,238,238);
+  background-color: rgb(8,8,24);
+}
+@media screen and (max-width: 768px) {
+  article {
+    padding: 0px 2px 20px;
+  }
+}
+
+section{
+  display: block;
+}
+.tags{
+  position: relative;
+  margin-bottom: 12px;
+  overflow-y: hidden;
+  width: 100%;
+  border-bottom: 8px solid rgb(0,85,102);
+  
+}
+ul{
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.tags ul{
+  margin-top: 4px;
+  margin-bottom:0;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  white-space: nowrap;
+  margin-bottom: -32px;
+  padding-bottom: 30px;
+  clip-path: inset(0 0 30px 0);
+}
+
+.tags > ul > li{
+  display: inline-block;
+}
+.tags li{
+  font-family: monospace;
+  font-size: 1.7rem;
+  margin-right: 6px;
+  text-align: center;
+  background-color: rgb(0,51,51);
+}
+
+.tags li.age-d a{
+  border-top: 4px solid rgb(170,221,187);
+}
+.tags li.age-h a{
+  border-top: 4px solid rgb(255,153,221);
+}
+
+.tags li a{
+  display: block;
+  padding: 4px 14px;
+  text-decoration: none;
+  border-top: 4px solid rgb(0,51,51);
+}
+
+.tags li a.active{
+  background-color: rgb(0,85,102);
+  border-width: 4px 4px 0px;
+  border-style: solid solid solid;
+  border-color: rgb(0,85,102) rgb(0,85,102) rgb(0,85,102);
+  border-image: initial;
+  border-bottom: 0px;
+}
+
+article a {
+  color: rgb(221,255,255);
+}
+
+div.follows:target{
+  display: block;
+}
+
+div.follows{
+  display: none;
+  padding-top: 85px;
+  margin-top: -100px;
+}
+
+
+.follows ol{
+  list-style: none;
+  padding: 0;
+}
+.follows > ol > li {
+  position: relative;
+}
+
+.follows > ol > li:last-child {
+  border-bottom: none;
+}
+
+li {
+  display: list-item;
+}
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.follows h3 {
+  font-size: 1.1rem;
+  margin: 8px 0px 0px;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+  padding: 0 0 2.5px;
+}
+
+.follows h3 a {
+  pointer-events: auto;
+}
+
+.follows h3 img.favicon {
+  background-color: rgb(0, 63, 52);
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(0, 63, 52);
+  border-image: initial;
+  margin-bottom: -6px;
+  margin-top: 6px;
+  border-radius: 4px;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.follows h3 a.url {
+  color: rgb(119, 153, 170);
+  padding: 0px 3px;
+  display: inline-block;
+  max-width: calc(100% - 40px);
+  text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 4px 4px -6px;
+}
+
+.follows li.age-h .latest {
+  background-color: rgb(238, 119, 187) !important;
+}
+
+.follows li.age-d .latest {
+  background-color: rgb(119, 153, 85) !important;
+}
+
+.follows .latest {
+  background-color: rgb(119, 153, 170);
+  color: rgb(0, 0, 0);
+  font-size: 0.9rem;
+  cursor: default;
+  border-radius: 6px;
+  padding: 3.5px;
+}
+
+.follows li.age-d {
+  color: rgb(153, 119, 85);
+}
+.follows li.age-h {
+  color: rgb(153, 119, 85);
+}
+.follows div.extra ol.title li.age-h span.ago{
+  color: rgb(238, 119, 187);
+  font-weight: 700;
+}
+
+.follows div.extra ol.title li.age-d span.ago {
+  color: rgb(119, 153, 85);
+  font-weight: 700;
+}
+
+.follows div.extra ol.title li span.ago {
+  margin-left: 8px;
+  font-size: 0.9rem;
+  color: rgb(136, 119, 119);
+}
+
+
+
+
+.follows div.extra {
+  font-size: 1.1rem;
+  padding-left: 30px;
+  margin: 6px 0px;
+}
+
+.follows div.extra, .follows h3 {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.follows div.trunc ol.title {
+  display: inline-block;
+  padding-right: 6px;
+  height: 1.5rem;
+  max-width: calc(100% - 50px);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+ol ol {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.follows div.trunc ol.title li {
+  display: inline-block;
+}
+
+.follows div.extra ol.title li {
+  margin-bottom: 6px;
+}
+
+.follows div.extra ol.title li .txt, .follows div.extra ol.title li .txt s, .follows div.extra ol.title li a, .follows div.extra ol.title li a s {
+  text-decoration: none;
+}
+
+.follows div.extra a, .follows h3 a {
+  pointer-events: auto;
+}
+
+.follows div.trunc ol.title::after {
+  background-image: linear-gradient(90deg, rgba(8, 8, 24, 0), rgb(8, 8, 24) 90%);
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0px;
+  right: 40px;
+  pointer-events: none;
+  width: 40px;
+  height: 100%;
+}
+
+.follows div.extra a.collapse {
+  user-select: none;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-weight: 700;
+  font-size: 14px;
+  baseline-shift: -3px;
+  border-radius: 7px;
+  text-decoration: none;
+  padding: 0px 6px 0px 4px;
+  margin: 2px 3px;
+  overflow: hidden;
+}
+
+.follows div .enter {
+  display: inline;
+}
+.follows div .close {
+  display: none;
+}
+
+.follows div.trunc ol.title li::after {
+  color: rgb(0, 63, 52);
+}
+
+.follows div.trunc ol.title li::after {
+  content: " / ";
+}
+
+.follows div.extra a.collapse svg {
+  padding-top: 2px;
+  stroke: rgb(0, 85, 102);
+}
+svg{
+  width: 16;
+  height: 16;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 2;
+}
+
+.follows li.age-d h3 .url, .follows li.age-w h3 .url {
+  color: rgb(204, 221, 170); 
+}
+.follows li.age-h h3 .url {
+  color: rgb(255, 204, 204);
+}
+
+.follows > ol > li {
+  border-bottom: 1px dotted rgb(0, 85, 102);
+  margin-top: -7px;
+}
+
+.last_build {
+  background-color: black !important;
+  font-size: 1rem !important;
+}
+article a:visited {
+  color: rgb(170, 170, 170);
+}
+
+article a:hover {
+  color: rgb(238, 255, 51);
+}
